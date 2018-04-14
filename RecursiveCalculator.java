@@ -6,6 +6,7 @@ public class RecursiveCalculator {
 
 		int menu;
 		long n;
+		String nString;
 
 		System.out.println("-----MENU-----");
 		System.out.println("...Select the numeric base input...");
@@ -18,16 +19,29 @@ public class RecursiveCalculator {
 				System.out.println("...Decimal...");
 				System.out.print("Type a number:");
 				n = in.nextLong();
-				System.out.println("Binary:\t\t" + decimalToBinary(n) + "\nOctal:\t\t" + decimalToOctal(n) + "\nHexadecimal:\t" + decimalToHexadecimal(n));
+				System.out.println("Binary:\t\t" + decimalToBinary(n) + "\nOctal:\t\t" + decimalToOctal(n)
+						+ "\nHexadecimal:\t" + decimalToHexadecimal(n));
 				break;
 			case 2:
 				System.out.println("...Binary...");
+				System.out.print("Type a number:");
+				n = in.nextLong();
+				nString = Long.toString(n);
+				System.out.println(binaryToDecimal(nString));
 				break;
 			case 3:
 				System.out.println("...Octal...");
+				System.out.print("Type a number:");
+				n = in.nextLong();
+				nString = Long.toString(n);
+				System.out.println(binaryToDecimal(nString));
 				break;
 			case 4:
 				System.out.println("...Hexadecimal...");
+				System.out.print("Type a number:");
+				n = in.nextLong();
+				nString = Long.toString(n);
+				System.out.println(binaryToDecimal(nString));
 				break;
 			case -1:
 				break;
@@ -88,18 +102,41 @@ public class RecursiveCalculator {
 		return decimalToHexadecimal(n / 16) + result;
 	}
 
-	public static String binaryToDecimal(String n) {
+	//IMPORTANT: CHANGE THIS METHOD TO RECURSIVE
+	public static int binaryToDecimal(String n) {
+		int len = n.length();
+		int sum = 0;
 
-		return "";
+		for (int i = len - 1, j = 0; i >= 0; i--, j++) {
+			sum += Integer.parseInt(n.substring(i)) * (2 ^ j);
+		}
+
+		return sum;
 	}
 
+	//IMPORTANT: CHANGE THIS METHOD TO RECURSIVE
 	public static String octalToDecimal(String n) {
+		int len = n.length();
+		long sum = 0;
 
-		return "";
+		for (int i = len - 1, j = 0; i >= 0; i--, j++) {
+			sum += Long.parseLong(n.substring(i)) * (8 ^ j);
+		}
+
+		n = Long.toString(sum);
+		return n;
 	}
 
+	//IMPORTANT: CHANGE THIS METHOD TO RECURSIVE
 	public static String hexadecimalToDecimal(String n) {
+		int len = n.length();
+		long sum = 0;
 
-		return "";
+		for (int i = len - 1, j = 0; i >= 0; i--, j++) {
+			sum += Long.parseLong(n.substring(i)) * (16 ^ j);
+		}
+
+		n = Long.toString(sum);
+		return n;
 	}
 }
