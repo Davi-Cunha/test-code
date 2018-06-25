@@ -1,28 +1,28 @@
 # _java-test_ project
 ## Implementations already added to _java-test_ project
 * Menu selection
-* _**Decimal**_ base convertion to:
+* _**Decimal**_ base conversion to:
     * Binary
     * Octal
     * Hexadecimal
 
 ## Some next implementations it's to come for this _java-test_ project
-* Convertion between all bases
-    * _**Binary**_ base convertion to:
+* Conversion between all bases
+    * _**Binary**_ base conversion to:
         * Decimal
         * Octal
         * Hexadecimal
-    * _**Octal**_ base convertion to:
+    * _**Octal**_ base conversion to:
         * Decimal
         * Binary
         * Hexadecimal
-    * _**Hexadecimal**_ base convertion to:
-        * Decimal 
+    * _**Hexadecimal**_ base conversion to:
+        * Decimal
         * Binary
         * Octal
 
 ## Even further implementations
- * Implement this back-end code to an Android application, making it a calculator for Android decives
+ * Implement this back-end code to an Android application, making it a calculator for Android devices
 
 
- <h6 style="text-align: center">Coded by Davi Cunha</h6>
+###### Coded by Davi Cunha
