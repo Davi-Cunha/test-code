@@ -1,0 +1,16 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.coordinates .canvas-container {
+  text-align: center;
+}
+.coordinates .canvas-container header h1 {
+  color: #5B83AD;
+}
+.coordinates .canvas-container section #canvas {
+  border: 1px solid #000000;
+  width: 300px;
+  height: 300px;
+  box-shadow: 1px 1px 10px #888888;
+}

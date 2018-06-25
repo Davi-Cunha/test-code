@@ -1,0 +1,28 @@
+@nice-blue: #5b83ad;
+@canvas-border-box-color: #888888;
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.coordinates {
+    text-align: center;
+    .canvas-container {
+        header {
+            h1 {
+                color: @nice-blue;
+            }
+        }
+
+        section {
+            #canvas {
+                background-color: #ffffff;
+                border: 1px solid @canvas-border-box-color;
+                width: 300px;
+                height: 300px;
+                box-shadow: 1px 1px 3px #888888;
+            }
+        }
+    }
+}
