@@ -9,13 +9,19 @@ button {
     border: none;
     padding: 10px 5px 10px 5px;
     color: #ffffff;
+    margin: 10px!important;
     background-color: @btn-color;
-    outline: none;
+    outline: 1px solid red;
+    &:focus {
+        outline: none;
+        outline-width: 0;
+    }
 }
+
+
 
 img {
     width: 200px;
     height: 100px;
-    margin: 15px;
     border-radius: 15px;
 }
