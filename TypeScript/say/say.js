@@ -1,5 +1,14 @@
-function sayHello(user) {
-    return "Hello " + user;
+var Student = /** @class */ (function () {
+    function Student(firstName, lastName) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.fullName = firstName + " " + lastName;
+    }
+    return Student;
+}());
+function say(person) {
+    return "Hello " + person;
 }
-var user = 10;
-console.log(sayHello(user));
+var user = new Student("Davi", "Silva");
+console.log(say(user));
+console.log("3" + 3);
