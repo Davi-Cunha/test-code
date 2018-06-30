@@ -28,3 +28,8 @@ btnEveryP.addEventListener('click', function() {
     p.style.color = "red";
 
 });
+
+var btn = document.querySelector(".btn");
+btn.addEventListener('click', function() {
+    
+});
