@@ -9,3 +9,6 @@ body ul li {
   list-style: none;
   font-size: 20px;
 }
+body #numeric {
+  width: 100px;
+}
