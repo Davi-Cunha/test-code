@@ -2,17 +2,25 @@
   padding: 0;
   margin: 0;
 }
-body i {
+body #browsersList1 i {
   font-size: 30px;
   margin: 5px;
 }
-body #browsers {
+body #browsersList2 i {
+  font-size: 30px;
+  margin: 5px;
+}
+body #browsers1,
+body #browsers2,
+body #browsers3 {
   width: 250px;
-  height: 200px;
+  height: 100px;
   border: 3px solid silver;
   margin: 10px;
   padding: 10px;
 }
-body #browsers p {
+body #browsers1 p,
+body #browsers2 p,
+body #browsers3 p {
   font-size: 17px;
 }
