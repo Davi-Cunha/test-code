@@ -32,7 +32,6 @@ showCheckedItems.addEventListener('click', function () {
     document.querySelector("#selectFruitSelected").innerHTML = "You selected: " + listOfSelectedItems; + " "
 });
 
-
 var resetBtn = document.querySelector(".resetButton");
 resetBtn.addEventListener('click', function () {
     var list = document.querySelectorAll(".fruitList li input");
@@ -77,4 +76,25 @@ addListItemBtn2.addEventListener('click', function() {
 var emptyList2 = document.querySelector("#emptyBtn2");
 emptyList2.addEventListener('click', function() {
     document.querySelector("#number2").innerHTML = "";
+});
+
+var removeItems = document.querySelector("#removeBtn");
+removeItems.addEventListener('click', function() {
+    var list = document.querySelectorAll("#fruit input:checked");
+    var ul = document.querySelector("#fruit");
+
+    list.forEach(function(elem) {
+        var li = elem.parentNode;
+        ul.removeChild(li);
+    }); 
+});
+
+var resetConfigBtn = document.querySelector("#resetConfig");
+resetConfigBtn.addEventListener('click', function() {
+    var ul = document.querySelector("#fruit");
+    ul.innerHTML = "";
+    ul.innerHTML += "<li><input type='checkbox' name='fruit' value='apples'>Apples</li>";
+    ul.innerHTML += "<li><input type='checkbox' name='fruit' value='oragnes'>Oranges</li>";
+    ul.innerHTML += "<li><input type='checkbox' name='fruit' value='bananas'>Bananas</li>";
+    ul.innerHTML += "<li><input type='checkbox' name='fruit' value='grapes'>Grapes</li>";
 });
