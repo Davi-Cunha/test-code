@@ -93,6 +93,7 @@ function draw() {
     canvas_4 = document.querySelector("#canvas5");
     ctx_4 = canvas_4.getContext('2d');
     drawMonster(10, 10);
+    
 }
 
 function drawFilledRectangle(x, y, width, height, color) {
