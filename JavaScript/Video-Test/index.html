@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Video-Test</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt"
+        crossorigin="anonymous">
+</head>
+<body>
+    <h1>Me tira daqui, por favor.</h1>
+    <video id="player" width="480" height="480">
+        <source src="./video/nyan-cat.mp4" type="video/mp4">
+    </video>
+    <p id="videoTime">&nbsp;</p>
+    <div class="wrapper">
+        <button id="play" onclick="playVideo();" /><i class="fas fa-play"></i></button>
+        <button id="pause" onclick="pauseVideo();"><i class="fas fa-pause"></i></button>
+        <button id="rewind" onclick="rewindVideo();"><i class="fas fa-backward"></i></button>
+    </div>
+    
+
+    <script src="./js/main.js"></script>
+</body>
+</html>
