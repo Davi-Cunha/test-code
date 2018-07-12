@@ -5,8 +5,6 @@ function init() {
         let video = document.querySelector("#video");
         video.srcObject = stream;
         video.play();
-        let vid = document.createElement("video");
-        vid.srcObject = stream;
     }).catch(function (err) {
         alert("Something went wrong: " + err);
     });
