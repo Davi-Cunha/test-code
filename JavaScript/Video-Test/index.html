@@ -10,15 +10,15 @@
         crossorigin="anonymous">
 </head>
 <body>
-    <h1>Me tira daqui, por favor.</h1>
+    <h1>Best meme of all time</h1>
     <video id="player" width="480" height="480">
         <source src="./video/nyan-cat.mp4" type="video/mp4">
     </video>
-    <p id="videoTime">&nbsp;</p>
     <div class="wrapper">
-        <button id="play" onclick="playVideo();" /><i class="fas fa-play"></i></button>
-        <button id="pause" onclick="pauseVideo();"><i class="fas fa-pause"></i></button>
-        <button id="rewind" onclick="rewindVideo();"><i class="fas fa-backward"></i></button>
+        <button id="rewind"><i class="fas fa-backward"></i></button>
+        <button id="play"/><i id="playPause" class="fas fa-play"></i></button>
+        <button id="fastForward" ><i class="fas fa-forward"></i></i></button> 
+        <button id="muteBtn"><i id="mute" class="fas fa-volume-up"></i></button>  
     </div>
     
 

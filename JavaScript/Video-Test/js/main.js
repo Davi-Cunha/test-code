@@ -1,23 +1,51 @@
-window.onload = init;
-let vid, videoTime;
+let vid, videoTime, rewind, fastForward, playPauseBtn, muteBtn;
 
+playPauseBtn = document.querySelector("#playPause");
+vid = document.querySelector("#player");
+videoTime = document.querySelector("#videoTime");
+muteBtn = document.querySelector("#mute");
+rewind = document.querySelector("#rewind");
+fastForward = document.querySelector("#fastForward");
 
-function init() {
-    console.log("Page is loaded, DOM is ready!");
-    vid = document.querySelector("#player");
-    videoTime = document.querySelector("#videoTime");
+playPauseBtn.addEventListener('click', function playVideo() {
+    if (playPauseBtn.className === "fas fa-pause") {
+        vid.pause();
+        playPauseBtn.className = "fas fa-play";
+    } else if (playPauseBtn.className === "fas fa-play") {
+        vid.play();
+        playPauseBtn.className = "fas fa-pause";
+    }
+});
 
-}
-
-function playVideo() {
+vid.addEventListener('canplaythrough', function () {
     vid.play();
-}
+}, false);
 
-function pauseVideo() {
-    vid.pause();
-}
-
-function rewindVideo() {
+rewind.addEventListener('click', function() {
     vid.currentTime -= 5;
+});
+
+fastForward.addEventListener('click', function() {
+    vid.currentTime += 5;
+});
+
+muteBtn.addEventListener('click', function() {
+    if(muteBtn.className === "fas fa-volume-off") {
+        vid.muted = false;
+        muteBtn.className = "fas fa-volume-up";
+    } else if (muteBtn.className === "fas fa-volume-up") {
+        vid.muted = true;
+        muteBtn.className = "fas fa-volume-off";
+    }
+});
+
+function muteVideo() {
+    if (muted % 2 === 0) {
+        vid.muted = true;
+    } else {
+        vid.muted = false;
+    }
+    muted++;
 }
+
 
