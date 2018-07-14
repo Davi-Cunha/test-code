@@ -38,14 +38,3 @@ muteBtn.addEventListener('click', function() {
         muteBtn.className = "fas fa-volume-off";
     }
 });
-
-function muteVideo() {
-    if (muted % 2 === 0) {
-        vid.muted = true;
-    } else {
-        vid.muted = false;
-    }
-    muted++;
-}
-
-
