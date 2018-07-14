@@ -21,16 +21,27 @@ vid.addEventListener('canplaythrough', function () {
     vid.play();
 }, false);
 
-rewind.addEventListener('click', function() {
+vid.addEventListener('mouseover', function () {
+    vid.style.filter = "grayscale(100%)";
+    vid.style.transition = "all .4s ease-in-out"
+});
+
+vid.addEventListener('mouseout', function () {
+    vid.style.filter = "grayscale(0%)";
+    vid.style.transition = "all .4s ease-in-out"
+});
+
+rewind.addEventListener('click', function () {
     vid.currentTime -= 5;
 });
 
-fastForward.addEventListener('click', function() {
+
+fastForward.addEventListener('click', function () {
     vid.currentTime += 5;
 });
 
-muteBtn.addEventListener('click', function() {
-    if(muteBtn.className === "fas fa-volume-off") {
+muteBtn.addEventListener('click', function () {
+    if (muteBtn.className === "fas fa-volume-off") {
         vid.muted = false;
         muteBtn.className = "fas fa-volume-up";
     } else if (muteBtn.className === "fas fa-volume-up") {
