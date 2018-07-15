@@ -201,6 +201,13 @@ function createBall(n) {
     return ballArray;
 }
 
+function getRandomColor() {
+    let color;
+
+    color = "#"+ 
+
+}
+
 
 let balls = createBall(5);
 
