@@ -96,6 +96,7 @@ console.log(darkVader.describeYourself());
 // ES6 Classes
 // In ES6 classes with constructors inside the classes to 
 // change or add a variable's content with the reserved word 'new'
+console.log();
 
 class HeroES6 {
     constructor(name, side) {
@@ -119,10 +120,88 @@ class HeroES6 {
 
 HeroES6.objCreated = 0;
 let jarjarBinks = new HeroES6('Jar Jar Binks', "Rebels");
+let R2D2 = new HeroES6('R2D2', 'Rebels');
 console.log(jarjarBinks.speak().doSomethingElse);
 console.log(jarjarBinks.speak().msg);
+console.log(R2D2.speak().doSomethingElse);
+console.log(R2D2.speak().msg);
 console.log("Number of objects created: " + HeroES6.objCreated);
 
+class Point {
+    constructor(x, y) {
+        this.x = x;
+        this.y = y;
+        Point.nbPointCreated++;
+    }
+
+    static distance(a, b) {
+        const dx = a.x - b.x;
+        const dy = a.y - b.y;
+        return Math.sqrt(dx * dx + dy * dy);
+    }
+}
+
+Point.nbPointCreated = 0;
+
+const p1 = new Point(5, 5);
+const p2 = new Point(10, 10);
+const p3 = new Point(25, 32);
+
+console.log("\np1: " + p1.x + " " + p1.y + "\np2: " + p2.x + " " + p2.y + "\np3: "+ p3.x + " " + p3.y);
+console.log("Distance between the two points: " + Point.distance(p1, p2));
+console.log("Number of objects created: "+ Point.nbPointCreated);
+console.log();
 
 
+// class Person {
+//     constructor(givenName, familyName) {
+//         this.givenName = givenName;
+//         this.familyName = familyName;
+//     }
 
+//     get familyName() {
+//         return this.familyName.toUpperCase();
+//     }
+
+//     set familyName(newFamilyName) {
+//         this.familyName = newFamilyName;
+//     }
+
+//     walk() {
+//         return this.givenName + " " + this.familyName; + " is walking!";
+//     }
+// }
+
+// p1 = new Person('Davi', 'Cunha');
+// p2 = new Person('Michael', 'Buffa');
+
+// console.log(p1.walk());
+// console.log(p2.walk());
+
+// p1.familyName = 'Silva';
+
+// console.log(p1.walk());
+
+// Different method to create a ball object
+
+function createBall(n) {
+    let ballArray = [];
+
+    for (let i = 0; i < n; i++) {
+        let b = {
+            // x: w / 2,
+            // y: h / 2,
+            radius: 5 + 30 * Math.random(),
+            speedX: -5 + 10 * Math.random(),
+            speedY: -5 + 10 * Math.random(),
+            color: 'red',
+        }
+        ballArray.push(b);
+    }
+    return ballArray;
+}
+
+
+let balls = createBall(5);
+
+console.log(balls[2].color);
