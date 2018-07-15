@@ -204,7 +204,7 @@ function createBall(n) {
 function getRandomColor() {
     let color;
 
-    color = "#"+ 
+    color = "#";
 
 }
 
