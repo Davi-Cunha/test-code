@@ -147,9 +147,9 @@ const p1 = new Point(5, 5);
 const p2 = new Point(10, 10);
 const p3 = new Point(25, 32);
 
-console.log("\np1: " + p1.x + " " + p1.y + "\np2: " + p2.x + " " + p2.y + "\np3: "+ p3.x + " " + p3.y);
+console.log("\np1: " + p1.x + " " + p1.y + "\np2: " + p2.x + " " + p2.y + "\np3: " + p3.x + " " + p3.y);
 console.log("Distance between the two points: " + Point.distance(p1, p2));
-console.log("Number of objects created: "+ Point.nbPointCreated);
+console.log("Number of objects created: " + Point.nbPointCreated);
 console.log();
 
 
@@ -202,13 +202,39 @@ function createBall(n) {
 }
 
 function getRandomColor() {
-    let color;
+    let color = "#";
+    let hexColor;
 
-    color = "#";
-
+    for (let i = 0; i < 6; i++) {
+        hexColor = Math.floor(Math.random() * 15);
+        switch (hexColor) {
+            case 10:
+                hexColor = 'A';
+                break;
+            case 11:
+                hexColor = 'B';
+                break;
+            case 12:
+                hexColor = 'C';
+                break;
+            case 13:
+                hexColor = 'D';
+                break;
+            case 14:
+                hexColor = 'E';
+                break;
+            case 15:
+                hexColor = 'F';
+                break;
+        }
+        color += hexColor;
+    }
+    return color;
 }
 
 
 let balls = createBall(5);
 
 console.log(balls[2].color);
+
+console.log(getRandomColor());

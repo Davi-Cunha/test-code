@@ -43,6 +43,12 @@ colorPicker.addEventListener('change', function() {
     document.body.style.backgroundColor = color;
 });
 
+var randomColorBtn = document.querySelector("#randomColorBtn"); 
+
+randomColorBtn.addEventListener('click', function() {
+    document.body.style.backgroundColor = getRandomColor();
+});
+
 function init() {
     coords_p.innerHTML = "&nbsp;";
     canvas_1 = document.querySelector(".canvas canvas");
@@ -149,4 +155,36 @@ function drawMonster(x, y) {
   
    // GOOD practice: restore the context
    ctx_4.restore();
+}
+
+
+function getRandomColor() {
+    let color = "#";
+    let hexColor;
+
+    for (let i = 0; i < 6; i++) {
+        hexColor = Math.floor(Math.random() * 15);
+        switch (hexColor) {
+            case 10:
+                hexColor = 'A';
+                break;
+            case 11:
+                hexColor = 'B';
+                break;
+            case 12:
+                hexColor = 'C';
+                break;
+            case 13:
+                hexColor = 'D';
+                break;
+            case 14:
+                hexColor = 'E';
+                break;
+            case 15:
+                hexColor = 'F';
+                break;
+        }
+        color += hexColor;
+    }
+    return color;
 }
