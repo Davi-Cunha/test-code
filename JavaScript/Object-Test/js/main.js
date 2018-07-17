@@ -194,7 +194,7 @@ function createBall(n) {
             radius: 5 + 30 * Math.random(),
             speedX: -5 + 10 * Math.random(),
             speedY: -5 + 10 * Math.random(),
-            color: 'red',
+            color: getRandomColor(),
         }
         ballArray.push(b);
     }
@@ -232,9 +232,179 @@ function getRandomColor() {
     return color;
 }
 
-
 let balls = createBall(5);
 
 console.log(balls[2].color);
-
 console.log(getRandomColor());
+
+class Ball {
+    constructor(x, y, radius, color, speedX, speedY) {
+        this.x = x;
+        this.y = y;
+        this.radius = radius;
+        this.color = getRandomColor();
+        this.speedX = speedX;
+        this.speedY = speedY;
+    }
+
+    draw(ctx) {
+        // BEST PRATICE: save the context, use 2D transformations
+        ctx.save();
+        // Translate the coordinate system, draw relative to it
+        ctx.translate(this.x, this.y);
+        ctx.fillStyle = this.color;
+        // (0, 0) is the top left corner of the canvas
+        ctx.beginPath();
+        ctx.acr(0, 0, this.radius, 0, 2 * Math.PI);
+        ctx.fill();
+        // BEST PRATICE: restore the context
+        ctx.restore();
+    }
+
+    move() {
+        this.x += this.speedX;
+        this.y += this.speedY;
+    }
+
+    getRandomColor() {
+        let color = "#";
+        let hexColor;
+
+        for (let i = 0; i < 6; i++) {
+            hexColor = Math.floor(Math.random() * 15);
+            switch (hexColor) {
+                case 10:
+                    hexColor = 'A';
+                    break;
+                case 11:
+                    hexColor = 'B';
+                    break;
+                case 12:
+                    hexColor = 'C';
+                    break;
+                case 13:
+                    hexColor = 'D';
+                    break;
+                case 14:
+                    hexColor = 'E';
+                    break;
+                case 15:
+                    hexColor = 'F';
+                    break;
+            }
+            color += hexColor;
+        }
+        return color;
+    }
+
+}
+
+let ballClass = new Ball(3, 4, 3, '#433000', 2, 2);
+ballClass.move();
+
+
+// References to object: PONITERS
+// Explanation: An object 'y' is create. Then he viriables 'y2' and 'y3' is created.
+// 'y2' and 'y3' are pointing the the same memory address the 'y' is pointig. When 'y2' or 'y3' 
+// changes its properties' value all the others' properties values changes with it.
+let y = {
+    a: 2
+};
+
+console.log("Variable type:" + typeof (y));
+console.log("y.a: " + y.a);
+let y2 = y;
+let y3 = y;
+console.log("y.a: " + y.a);
+console.log("y2.a: " + y2.a);
+console.log("y3.a: " + y3.a);
+y2.a = 5;
+console.log("y.a: " + y.a);
+console.log("y2.a: " + y2.a);
+console.log("y3.a: " + y3.a);
+
+
+let driver = {
+    name: 'Davi'
+};
+
+let car = {
+    color: 'blue',
+    driver: driver
+};
+
+console.log(driver.name);
+console.log(car.driver.name);
+
+let obj = {
+    x: 2
+};
+
+console.log(obj.x);
+
+function add(a, b) {
+    a.x += b;
+}
+
+add(obj, 3);
+console.log(obj.x);
+
+// Comparing two objects
+
+let originalObject = {
+    name: 'Davi'
+};
+
+let copy = originalObject;
+
+if (originalObject === copy) {
+    console.log("true");
+} else {
+    console.log("false");
+}
+
+let anotherObject = {
+    name: 'Davi'
+};
+
+if (originalObject === anotherObject) {
+    console.log("true");
+} else {
+    console.log("false");
+}
+
+let s = "Davi Cunha Silva";
+// It divide the String into an array according with the character specified, which is " "
+let sArray = s.split(" ");
+console.log(sArray[0] + sArray[1] + sArray[2]);
+
+
+function getRandomValue(min, max) {
+    return ((max - min) * Math.random()) + min;
+}
+
+// Playing with the Date class
+let date = new Date(1996, 10, 19);
+switch(date.getDay()) {
+    case 0:
+        console.log('Sunday');
+        break;
+    case 1: 
+        console.log('Monday');
+        break;
+    case 2:
+        console.log('Tuesday');
+        break;
+    case 3:
+        console.log('Wednesday');
+        break;
+    case 4:
+        console.log('Thursday');
+        break;
+    case 5:
+        console.log('Friday');
+        break;
+    case 6:
+        console.log('Saturday');
+        break;
+}

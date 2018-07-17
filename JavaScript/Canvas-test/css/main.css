@@ -5,6 +5,9 @@
 .coordinates {
   text-align: center;
 }
+.coordinates button:focus {
+  outline: none;
+}
 .coordinates .canvas-container header h1 {
   color: #5b83ad;
 }

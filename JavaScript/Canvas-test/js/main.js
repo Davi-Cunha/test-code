@@ -46,7 +46,9 @@ colorPicker.addEventListener('change', function() {
 var randomColorBtn = document.querySelector("#randomColorBtn"); 
 
 randomColorBtn.addEventListener('click', function() {
-    document.body.style.backgroundColor = getRandomColor();
+    let color = getRandomColor();
+    document.body.style.backgroundColor = color;
+    console.log("Color: " + color);
 });
 
 function init() {
