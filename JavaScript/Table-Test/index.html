@@ -9,9 +9,42 @@
     
 </head>
 <body>
-    <h1>Test</h1>
-
-
+    <div class="inputs">
+        <input type="text" placeholder="First name" required>
+        <input type="text" placeholder="Family name" required>
+        <input type="number" max="100" min="0" placeholder="Age" required>
+    </div>
+    <button id="changeBorderBtn">Change border!</button>
+    <div class="delete-input">
+        <input type="number" placeholder="Row" max="100" min="0">
+    </div>
+    <button id="deleteRowBtn">Delete some table row!</button>
+    <table>
+        <thead>
+            <tr>
+                <th scope="col">Given Name</th>
+                <th scope="col">Family Name</th>
+                <th scope="col">Age</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Davi</td>
+                <td>Cunha</td>
+                <td>21</td>
+            </tr>
+            <tr>
+                <td>Darth</td>
+                <td>Varder</td>
+                <td>Unknown</td>
+            </tr>
+            <tr>
+                <td>Luke</td>
+                <td>Skywalker</td>
+                <td>Unknown</td>
+            </tr>
+        </tbody>
+    </table>
 
     <script src="./js/main.js"></script>
 </body>
