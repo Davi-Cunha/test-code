@@ -9,12 +9,12 @@ $hover-color: #f2fd8c
 
 body 
     background-color: #cccccc
-    table
+    font-family: 'Lato'
+    #table1
         margin: 0 auto
         padding: 30px
-        font-family: sans-serif
         color: $letters-color
-        table, tr, th, td 
+        #table1, tr, th, td 
             border: 1px solid black
         tr
             th, td 
@@ -67,3 +67,36 @@ body
         background-color: transparent   
         &:focus
             outline: none
+
+    #table2, #table3
+        margin: 0 auto
+        border-radius: 10px
+        tr
+            
+            th, td
+                text-align: center
+                padding: 5px
+            th
+                background-color: $light-green
+            td
+                background-color: #dddddd
+                &:hover
+                    background-color: $hover-color
+    
+    .inputs-table2
+        margin: 0 auto
+        display: block
+        text-align: center
+        margin: 10px
+        input
+            display: inline-block
+            width: 100px
+            padding: 6px
+            border-radius: 5px
+            border: none
+        input[type="number"]
+            width: 50px
+        input[type="color"]
+            background-color: #ffffff
+            width: 30px
+            height: 20px
