@@ -1,0 +1,7 @@
+body #users table {
+  border: 1px solid black; }
+  body #users table tr th, body #users table tr td {
+    border: 1px solid black !important;
+    padding: 5px; }
+
+/*# sourceMappingURL=main.css.map */
