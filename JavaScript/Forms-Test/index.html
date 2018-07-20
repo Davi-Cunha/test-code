@@ -6,14 +6,26 @@
     <title>Forms-Test</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="./css/main.css" />
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
 </head>
 <body>
-    
 
-    <form action="index2.html" method="GET" >
-        <label for="name">Name: </label>
-        <input id="name" type="text" name="name" placeholder="Name" aria-labelledby="">
-    </form>
+    <div class="form-container">
+        <form action="index2.html" method="POST">
+            <input id="name" type="text" name="name" placeholder="Name" role="text" required>
+            <br>
+            <input id="last-name" type="text" name="last-name" placeholder="Last name" role="text" required>
+            <br>
+            <input id="email" type="email" name="email" placeholder="E-mail" role="text" required>
+            <br>
+            <input id="password" type="password" name="password" placeholder="Type password" required> 
+            <br>
+            <input id="retype-password" type="password" name="retype-password" placeholder="Retype password" required>
+            <br>
+            <button id="submitBtn" type="submit">Submit</button>
+        </form>
+    </div>
+
 
     <script src="./js/main.js"></script>
 </body>
