@@ -30,5 +30,28 @@ console.log(JSONFormat);
 let JSONObject = JSON.parse(JSONFormat);
 console.log(JSONObject.name);
 
+// REMOTE JSON ACCESS
+
+// Access a JSON file from the web and parses it into a JavaScript object
+function search() {
+    // The url where the JSON it is been requested
+    let queryUrl = "https://jsonplaceholder.typicode.com/users";
+    // Object with the method that allows to request the JSON file
+    let xhr = new XMLHttpRequest();
+    // Method to get the JSON file
+    xhr.open('GET', queryUrl, true);
+    // On JSON file load do something
+    xhr.onload = (e) => {
+        let users = JSON.parse(xhr.response);
+        console.log(users[0]);
+        console.log(JSON.stringify(users[0]))
+    }
+
+    xhr.send();
 
 
+}
+
+function displayUsersAsTable(users) {
+
+}
