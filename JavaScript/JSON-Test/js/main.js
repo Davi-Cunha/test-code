@@ -73,11 +73,11 @@ function displayUsersAsTable(users) {
 
     userDiv.innerHTML = "";
 
-    row.innerHTML += "<th>Name</th><th>Username</th><th>Email</th>"
+    row.innerHTML += "<th>Id</th><th>Name</th><th>Username</th><th>Email</th>"
     users.forEach((currentUser) => {
         console.log(currentUser.name);
         let row2 = table.insertRow();
-        row2.innerHTML += "<td>" + currentUser.name + "</td><td>" + currentUser.username + "</td><td>" + currentUser.email + "</td>";
+        row2.innerHTML += "<td>" + currentUser.id + "</td><td>" + currentUser.name + "</td><td>" + currentUser.username + "</td><td>" + currentUser.email + "</td>";
     });
     userDiv.appendChild(table);
 }
