@@ -34,6 +34,7 @@ class ContactManager {
     }
 
     contactIndex(contactName) {
+        // CREATE ALGORITH TO SEARCH THE CONTACT BY NAME, LAST NAME, PHONE NUMBER AND EMAIL ADDRESS
         let index;
         for (let i = 0; i < this.listOfContacts.length; i++) {
             let name = this.listOfContacts[i].firstName;
@@ -52,9 +53,11 @@ class ContactManager {
     }
 
 
-    findContact(contactIndex){
+    findContact(contactName){
         // IMPORTANT
-        // CREATE A METHOD FIND THE CONTACT BY INDEX NUMBER
+        // CREATE METHODS FIND THE CONTACT BY INDEX NUMBER, 
+
+        console.log(this.contactIndex(contactName));
     }
 }
 
@@ -83,6 +86,7 @@ let searchBtn = document.querySelector(".searchNameDiv #searchBtn");
 
 searchBtn.addEventListener('click', () => {
     contactManager.findContact(search.value);
+    search.value = "";
 });
 
 
