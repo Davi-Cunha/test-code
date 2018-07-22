@@ -87,6 +87,16 @@ function displayUsersAsTable(users) {
 localStorage.lastName = "Bunny";
 localStorage.firstName = "Bugs";
 localStorage.location = "Earth";
-sessionStorage.lastName = "Bunny";
-sessionStorage.firstName = "Bugs";
-sessionStorage.location = "Earth";
+sessionStorage.lastName = "the Martian";
+sessionStorage.firstName = "Marvin";
+sessionStorage.location = "Mars";
+
+let localStorageArray = [localStorage.lastName, localStorage.firstName, localStorage.location];
+let sessionStorageArray = [sessionStorage.lastName, sessionStorage.firstName, sessionStorage.location];
+localStorageArray.forEach((local) => {
+    console.log("localStorage: " + local);
+});
+
+sessionStorageArray.forEach((local) => {
+    console.log("sessionStorage: " + local);
+});
