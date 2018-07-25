@@ -33,31 +33,39 @@ class ContactManager {
         });
     }
 
-    contactIndex(contactName) {
-        // CREATE ALGORITH TO SEARCH THE CONTACT BY NAME, LAST NAME, PHONE NUMBER AND EMAIL ADDRESS
-        let index;
-        for (let i = 0; i < this.listOfContacts.length; i++) {
-            let name = this.listOfContacts[i].firstName;
+    contactIndex(contactInfo) {
+        // ALGORITH TO SEARCH THE CONTACT BY NAME, LAST NAME, PHONE NUMBER AND EMAIL ADDRESS
+        let index = [];  
+        // let found = false;
 
-            if (name === contactName) {
-                index = i;
-                break;
+        for (let i = 0; i < this.listOfContacts.length; i++) {
+            let properties = Object.keys(this.listOfContacts[i]);
+            for (let j = 0; j < properties.length; j++) {
+                let info = this.listOfContacts[i][properties[j]];
+
+                if (info === contactInfo) {
+                    index.push(i);
+                    // found = true;
+                    break;
+                }
             }
+
+            // if(found) {
+            //     break;
+            // }
         }
 
         if (index === undefined) {
             return -1;
         }
-
         return index;
     }
 
-
-    findContact(contactName) {
+    findContact(contactInfo) {
         // IMPORTANT
-        // CREATE METHODS FIND THE CONTACT BY INDEX NUMBER, 
-
-        console.log(this.contactIndex(contactName));
+        // CREATE METHODS FIND THE CONTACT BY INDEX NUMBER
+        let index = this.contactIndex(contactInfo);
+        console.log(index);
     }
 }
 
@@ -75,7 +83,7 @@ submitBtn.addEventListener('click', () => {
 
     contact = new Contact(arr[0], arr[1], arr[2], arr[3]);
     contactManager.add(contact);
-
+    
     // arr.forEach((array) => {
     //     console.log(array);
     // });

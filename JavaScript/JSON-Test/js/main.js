@@ -24,6 +24,8 @@ console.log(anArray);
 console.log(typeof (JSONFormat))
 console.log(JSONFormat);
 
+console.log("Keys: " + Object.keys(complexObject));
+
 JSONFormat = JSON.stringify(complexObject);
 console.log(typeof (JSONFormat));
 console.log(JSONFormat);
