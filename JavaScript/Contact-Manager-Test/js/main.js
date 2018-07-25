@@ -53,7 +53,7 @@ class ContactManager {
     }
 
 
-    findContact(contactName){
+    findContact(contactName) {
         // IMPORTANT
         // CREATE METHODS FIND THE CONTACT BY INDEX NUMBER, 
 
@@ -88,5 +88,3 @@ searchBtn.addEventListener('click', () => {
     contactManager.findContact(search.value);
     search.value = "";
 });
-
-
