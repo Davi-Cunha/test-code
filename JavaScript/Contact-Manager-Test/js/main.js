@@ -83,10 +83,6 @@ submitBtn.addEventListener('click', () => {
 
     contact = new Contact(arr[0], arr[1], arr[2], arr[3]);
     contactManager.add(contact);
-    
-    // arr.forEach((array) => {
-    //     console.log(array);
-    // });
 });
 
 let search = document.querySelector(".searchNameDiv #search");
